@@ -121,6 +121,43 @@ html {
   scroll-padding-top: 90px;
 }
 
+/* Hamburger styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;   /* ✅ always pinned right */
+  left: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1100;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #ffdd57;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animate hamburger into X when open */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Mobile nav */
 @media (max-width: 768px) {
   .logo {
     left: 20px;
@@ -131,24 +168,66 @@ html {
     font-size: 2rem;
   }
 
+  .hamburger {
+    display: flex;
+    right: 20px;
+    left: auto;
+  }
+
   .nav-links {
-    gap: 20px;
+    position: absolute;
+    top: 70px;
+    left: 191px;
+    width: 220px;         
+    flex-direction: column;
+
+
+background: linear-gradient(135deg, #ff7e5f, #feb47b, #43cea2, #185a9d);
+background-size: 400% 400%;
+animation: gradientShift 12s ease infinite;
+
+
+
+
+
+
+    gap: 15px;
+    padding: 15px;
+    transform: translateY(-200%);
+    transition: transform 0.3s ease;
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
   }
 
   .emoji-plate {
-    min-width: 70px;
+    width: 100%;          
+    margin: 0;
+    min-width: unset;
     height: 50px;
     font-size: 1rem;
     padding: 5px 8px;
+    text-align: center;   
+    margin-left: 200px;
   }
 
   .emoji-plate::after {
-    height: 25px;
+    top: -20px;           
+    height: 20px;
   }
 
   .rope {
-    left: 120px;
-    width: calc(100% - 140px);
-    height: 4px;
+    display: none; 
   }
+}
+
+/* ✨ Animated gradient background */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }

@@ -1,8 +1,10 @@
 import '../styles/Header.css';
 import { Link } from 'react-scroll';
+import { useState } from 'react';
 
 export default function Header() {
   const navOffset = -90; // Adjust based on navbar height
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <header className="navbar">
@@ -11,15 +13,26 @@ export default function Header() {
         <span className="logo-gradient">AA</span>
       </div>
 
+      {/* Hamburger Icon */}
+      <div
+        className={`hamburger ${menuOpen ? 'open' : ''}`}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
       <div className="rope-container">
         <div className="rope"></div>
-        <nav className="nav-links">
+        <nav className={`nav-links ${menuOpen ? 'active' : ''}`}>
           <Link
             to="hero"
             smooth={true}
             duration={500}
             offset={navOffset}
             className="emoji-plate"
+            onClick={() => setMenuOpen(false)}
           >
             🏠 <span className="menu-name">Home</span>
           </Link>
@@ -29,6 +42,7 @@ export default function Header() {
             duration={500}
             offset={navOffset}
             className="emoji-plate"
+            onClick={() => setMenuOpen(false)}
           >
             👤 <span className="menu-name">About</span>
           </Link>
@@ -38,6 +52,7 @@ export default function Header() {
             duration={500}
             offset={navOffset}
             className="emoji-plate"
+            onClick={() => setMenuOpen(false)}
           >
             💻 <span className="menu-name">Skills</span>
           </Link>
@@ -47,6 +62,7 @@ export default function Header() {
             duration={500}
             offset={navOffset}
             className="emoji-plate"
+            onClick={() => setMenuOpen(false)}
           >
             📂 <span className="menu-name">Projects</span>
           </Link>
@@ -56,6 +72,7 @@ export default function Header() {
             duration={500}
             offset={navOffset}
             className="emoji-plate"
+            onClick={() => setMenuOpen(false)}
           >
             ✉️ <span className="menu-name">Contact</span>
           </Link>

@@ -28,7 +28,7 @@
 .skills-list {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 25px;
+  gap: 20px;
   list-style: none;
   max-width: 1200px;
   margin: 0 auto;
@@ -38,17 +38,17 @@
 .skills-list li {
   background: linear-gradient(135deg, #1c1c1c, #2c3e50);
   border-radius: 15px;
-  padding: 16px 20px;
+  padding: 12px 10px;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #ffffff;
   text-align: center;
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-  transition: all 0.5s ease;
-  animation: fadeIn 0.8s ease forwards;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+  animation: fadeIn 0.6s ease forwards;
 }
 
 .skills-list li::before {
@@ -61,19 +61,19 @@
   background: linear-gradient(45deg, #ff6ec4, #7873f5, #43cea2, #ffd700, #ff6ec4);
   background-size: 400% 400%;
   border-radius: 20px;
-  opacity: 0.3;
-  transition: all 0.6s ease;
+  opacity: 0.2;
+  transition: all 0.5s ease;
   z-index: 0;
   animation: gradientMove 8s ease infinite;
 }
 
 .skills-list li:hover::before {
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .skills-list li:hover {
-  transform: translateY(-8px) scale(1.07);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
   color: #ffd700;
 }
 
@@ -83,6 +83,7 @@
   z-index: 1;
 }
 
+/* ---------- MOBILE RESPONSIVE DESIGN ---------- */
 @media (max-width: 1024px) {
   .skills-list {
     grid-template-columns: repeat(4, 1fr);
@@ -91,18 +92,32 @@
 
 @media (max-width: 768px) {
   .skills-list {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on tablet */
+    gap: 15px;
+  }
+
+  .skills-list li {
+    font-size: 0.9rem;
+    padding: 10px 8px;
+    border-radius: 12px;
   }
 }
 
 @media (max-width: 480px) {
   .skills-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+    gap: 10px;
+  }
+
+  .skills-list li {
+    font-size: 0.85rem;
+    padding: 8px 6px;
+    border-radius: 10px;
   }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(15px); }
   to { opacity: 1; transform: translateY(0); }
 }
 

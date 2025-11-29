@@ -8,6 +8,7 @@
   align-items: center;
   color: #fff;
   font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
 }
 
 /* Title */
@@ -18,6 +19,7 @@
   color: #ffffff;
   position: relative;
   letter-spacing: 1px;
+  text-align: center;
 }
 
 .section-title::after {
@@ -110,75 +112,28 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
-  #contact form {
-    padding: 35px;
-  }
-
-  .section-title {
-    font-size: 34px;
-  }
-
+  #contact form { padding: 35px; }
+  .section-title { font-size: 34px; }
   #contact input,
-  #contact textarea {
-    font-size: 15px;
-    padding: 12px 16px;
-  }
-
-  #contact button {
-    font-size: 17px;
-    padding: 12px 16px;
-  }
+  #contact textarea { font-size: 15px; padding: 12px 16px; }
+  #contact button { font-size: 17px; padding: 12px 16px; }
 }
 
 @media (max-width: 768px) {
-  #contact {
-    padding: 60px 15px;
-  }
-
-  #contact form {
-    padding: 30px;
-    border-radius: 18px;
-  }
-
-  .section-title {
-    font-size: 30px;
-  }
-
+  #contact { padding: 60px 15px; }
+  #contact form { padding: 30px; border-radius: 18px; }
+  .section-title { font-size: 30px; margin-bottom: 30px; }
   #contact input,
-  #contact textarea {
-    font-size: 14px;
-    padding: 10px 14px;
-  }
-
-  #contact button {
-    font-size: 16px;
-    padding: 12px 14px;
-  }
+  #contact textarea { font-size: 14px; padding: 10px 14px; }
+  #contact button { font-size: 16px; padding: 12px 14px; }
 }
 
 @media (max-width: 480px) {
-  #contact {
-    padding: 50px 10px;
-  }
-
-  #contact form {
-    padding: 25px;
-    border-radius: 14px;
-  }
-
-  .section-title {
-    font-size: 26px;
-    margin-bottom: 30px;
-  }
-
+  #contact { padding: 40px 12px; }
+  #contact form { padding: 25px; border-radius: 14px; }
+  .section-title { font-size: 26px; margin-bottom: 25px; }
   #contact input,
-  #contact textarea {
-    font-size: 13px;
-    padding: 10px 12px;
-  }
-
-  #contact button {
-    font-size: 15px;
-    padding: 10px 12px;
-  }
+  #contact textarea { font-size: 13px; padding: 10px 12px; }
+  #contact textarea { height: 120px; } /* smaller textarea on mobile */
+  #contact button { font-size: 15px; padding: 10px 12px; }
 }
