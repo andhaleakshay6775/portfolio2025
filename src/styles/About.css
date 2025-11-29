@@ -1,0 +1,100 @@
+.about {
+  padding: 60px 40px;
+  max-width: 900px;
+  margin: 60px auto;
+  background: linear-gradient(135deg, #f5f7fa, #e4f0f8);
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: floatIn 1s ease forwards;
+}
+
+.about:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+}
+
+.about h2 {
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  position: relative;
+  display: inline-block;
+  font-weight: 800;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 50%;
+  height: 4px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  transition: width 0.3s ease;
+}
+
+.about h2:hover::after {
+  width: 100%;
+}
+
+.about p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin-bottom: 18px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.about p:hover {
+  color: #007bff;
+}
+
+/* Floating subtle animation */
+@keyframes floatIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .about {
+    padding: 50px 30px;
+  }
+  .about h2 {
+    font-size: 2rem;
+  }
+  .about p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 40px 20px;
+    margin: 40px 20px;
+  }
+  .about h2 {
+    font-size: 1.8rem;
+  }
+  .about p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 30px 15px;
+    margin: 30px 15px;
+  }
+  .about h2 {
+    font-size: 1.5rem;
+  }
+  .about p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
